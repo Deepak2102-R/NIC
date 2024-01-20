@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedHelp</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css"
+    />
+    <link
+      rel="stylesheet"
+      href="index.css"
+    />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="assets/lrm-graphhopper-1.2.0.min.js"></script>
+  </head>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    #map {
+      vertical-align: center;
+      margin: auto;
+      width: 50%;
+      height: 50vh;
+    }
+      </style>
+
+
+  <body class="w-screen h-screen">
+
+    <div id="Text">
+      <h1 id="Title-Text">
+        Med<span class="sTitle">Help</span>
+      </h1>
+      <h4 id="sub-text">Find where you can Heal</h4>
+    </div>
+
+    <div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Search</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+          <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button class="search-button">🕵️ Search</button>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="map" class="w-screen h-screen"></div>
+  </body>
+  <div>
+    
+  </div>
+
+
+  <script src="app.js" type="module"></script>
+</html>
