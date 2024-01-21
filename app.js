@@ -65,7 +65,7 @@ const locations = [
 
 map = L.map("map").setView(locations[0], 7);
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 40,
+  maxZoom: 19,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
@@ -80,7 +80,7 @@ hospitals.map((hospital) => {
 
 const replaceWithRandomPoints = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:5500/nagai.geojson');
+    const response = await fetch('nagai.geojson');
  // Replace 'data.geojson' with your file path
     const data = await response.json();
     console.log(data);
@@ -104,8 +104,7 @@ const calculateDistances = async () => {
       await getRouteInfo(location, end, hospital.hospital, i);
     }
   }
-
-  const locationOneDistancesTimes = sortedDistances.filter(entry => entry.locationIndex === 0);
+  const locationOneDistancesTimes = sortedDistances.filter(entry => entry.locationIndex === 1);
   console.log("Distances and Times for Location 1:", locationOneDistancesTimes);
 };
 
